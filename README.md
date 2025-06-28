@@ -1,5 +1,5 @@
 # Climate-Change-Forecasting-Project
-This project explores and forecasts climate change patterns over 60 years (1960–2020) using temperature and precipitation data from five major U.S. cities: Boston, Los Angeles, New York, Washington, D.C., and Chicago. It uses Python-based data analysis, visualization, and time series forecasting techniques to extract insights and build a 5-year forecast for average temperature trends.
+This project explores and forecasts climate change patterns over 60 years (1960–2020) using temperature and precipitation data from five major U.S. cities: Boston, Los Angeles, New York, Washington, D.C., and Chicago. It uses Python-based data analysis, visualization, and time series forecasting techniques to extract insights and build a 5-year forecast for average temperature trends using Facebook Prophet.
 
 ## Dataset
 
@@ -22,7 +22,14 @@ This project explores and forecasts climate change patterns over 60 years (1960�
 City, Year, Month
 
 ## Objective
-This project aims to detect trends, visualize seasonal patterns, and forecast future temperatures using Facebook Prophet.
+- Detect long-term trends and seasonal patterns in temperature and precipitation.
+- Visualize key insights using static and interactive plots.
+- Forecast future temperature trends using Facebook Prophet.
+
+## Project Structure
+- README.md
+- ClimateChange(1).ipynb
+- ClimateChangeDataset.csv
 
 ## Setup and Requirements
 
@@ -40,70 +47,41 @@ To get started:
 
 ## Installation
 
-pip install pandas seaborn matplotlib plotly prophet
+Install Facebook Prophet
 
-## Steps and Tasks
+## Usage
 
-1. **Importing and Preprocessing**
+1. Download the dataset from the [provided link](https://kilthub.cmu.edu/articles/dataset/Compiled_daily_temperature_and_precipitation_data_for_the_U_S_cities/7890488) and save it in the `data/` folder.
+2. Launch the notebooks in order for a step-by-step workflow:
+   - Data loading & cleaning
+   - Exploratory analysis & visualization
+   - Forecasting with Prophet
 
-Import libraries
+## 📊 Analytical Steps & Visualizations
 
-2. **Load the dataset into a DataFrame**
-
-3. **Convert Date to datetime**
-
-4. **Extract unique city names for iteration.**
-
-5. **Trend Visualization (Line Plot)**
-
-For each city:
-
-Group by year
-
-Plot average, max and min temperature trends
-
-6. **Decade-wise Heatmaps**
-
-Create a Decade column
-
-Group by Decade and Month
-
-7. **Use seaborn.heatmap() to visualize seasonal trends per city**
-
-8. **Yearly Precipitation Trend**
-
-Group by City and Year, calculate the average precipitation.
-
-Plot precipitation trends for each city
-
-Moving Average Trends
-
-Calculate the rolling average of tavg (30-day window)
-
-Plot original vs smoothed temperature lines using plotly
-
-9. **Forecasting Using Prophet**
-For each city:
-
-Instantiate the Prophet model
-
-Fit historical data
-
-Generate future dates (5 years)
-
-Forecast and plot predictions
-
-Plot forecast components (trend, seasonality)
+- **Data Quality Checks:** Duplicate removal, missing value handling.
+- **Distributions & Outliers:** Boxplots and histograms for all cities.
+- **Correlation Analysis:** Heatmap of feature correlations.
+- **Trend Analysis:** Yearly average max/min temperature and precipitation trends per city.
+- **Decade-wise Heatmaps:** Monthly average temperatures by decade for each city.
+- **Rolling Averages:** 365-day rolling mean temperature trends for smoothing.
+- **Pairplots:** Visual comparison of temperature and precipitation variables across cities.
+- **Interactive Time Series:** Zoomable, interactive temperature plots by city.
+- **Forecasting:** 5-year temperature projections using Facebook Prophet, with components plots.
 
 ## Insights
 
-Average temperatures show an increasing trend across decades.
+Average temperatures show an increasing trend across decades especially in summer months. Winters are less cold in recent decades.
 
 Precipitation varies across cities but generally remains within a range.
 
 Seasonal variation is visible, with predictable summer peaks and winter lows.
 
 Prophet forecasts suggest a continued warming trend.
+
+## Contributing
+
+Pull requests and suggestions are welcome! If you find bugs or have enhancement ideas, open an issue or PR.
 
 ## License
 
